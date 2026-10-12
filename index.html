@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Coordinated-view prototypes — Planet Nine</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>" />
+  <link rel="stylesheet" crossorigin href="./assets/shared-xakpSbsL.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">CS 1710 · Week 9 · Dashboard prototypes</div>
+    <h1>Does the alignment survive, whichever objects you trust?</h1>
+    <p>
+      Two ways to wire the same three views together. Both use the real
+      catalogue of 90 extreme objects — the same data as the main site.
+    </p>
+  </header>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+    <a class="card" href="./a.html" style="text-decoration:none;color:inherit">
+      <h2>Prototype A — Cross-filter</h2>
+      <p class="sub">One selection, live. Drag a box on the scatter and the other two views recompute instantly.</p>
+      <p style="font-size:.85rem">Tests whether live filtering makes the sample-dependence obvious.</p>
+    </a>
+    <a class="card" href="./b.html" style="text-decoration:none;color:inherit">
+      <h2>Prototype B — Two-sample comparison</h2>
+      <p class="sub">Two selections side by side. Define A and B, see both results at once with the difference called out.</p>
+      <p style="font-size:.85rem">Tests whether direct comparison beats discovery-by-dragging.</p>
+    </a>
+  </div>
+
+  <div class="note">
+    <p><b>The thing to look for:</b> select the objects above the grey line
+    (closest approach &gt; 45 AU — the ones Neptune cannot reach) <em>and</em> tick
+    "well-measured orbits only". Agreement rises to <b>0.611</b> across 11 objects,
+    the strongest in the dataset, against 0.082 for everything. Either filter alone
+    gives far less (0.360 and 0.332). Splitting by distance instead barely moves the
+    needle at all. The open question is which of these two layouts makes that
+    two-filter combination easier to stumble on.</p>
+  </div>
+
+  <footer>
+    Runs on port 5174, separately from the main site on 5173.
+    Data: JPL Small-Body Database cross-checked against the Minor Planet Centre.
+  </footer>
+</div>
+</body>
+</html>

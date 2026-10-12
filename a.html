@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Prototype A — Cross-filter</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>" />
+  <script type="module" crossorigin src="./assets/a-B9w4xCCT.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/nulldist-BscQeuyX.js">
+  <link rel="stylesheet" crossorigin href="./assets/shared-xakpSbsL.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Prototype A</div>
+    <h1>Cross-filter</h1>
+    <p>Drag a box on the scatter to pick a group of objects. The other two views recompute for just that group.
+    Try the <em>q &gt; 45</em> preset with "well-measured orbits only" ticked.</p>
+    <nav class="nav">
+      <a href="./index.html">← Both prototypes</a>
+      <a href="./a.html" aria-current="page">A · Cross-filter</a>
+      <a href="./b.html">B · Comparison</a>
+    </nav>
+  </header>
+
+  <div class="toolbar">
+    <span class="hint">Presets:</span>
+    <button class="btn" data-preset="all">Everything</button>
+    <button class="btn" data-preset="detached">Beyond Neptune's reach (q &gt; 45)</button>
+    <button class="btn" data-preset="near">Neptune can still reach (q &lt; 45)</button>
+    <button class="btn" data-preset="far">Far out (a &gt; 250)</button>
+    <label class="chk"><input type="checkbox" id="qualityOnly" /> Well-measured orbits only</label>
+    <button class="btn" id="clear">Clear selection</button>
+    <span class="counter" id="counter">selections tried: 0</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:18px;align-items:start">
+    <div class="card">
+      <h2>Which objects do you trust?</h2>
+      <div class="sub">Each dot is one object. Larger, brighter dots have well-measured orbits. Drag to select.</div>
+      <div id="scatter"></div>
+    </div>
+    <div style="display:grid;gap:18px">
+      <div class="card">
+        <h2>Do they agree on a direction?</h2>
+        <div class="sub">Each selected object placed by the way it leans. White arrow is the average.</div>
+        <div id="rose"></div>
+      </div>
+      <div class="card">
+        <h2>Could that be luck?</h2>
+        <div class="sub" id="nullSub">—</div>
+        <div id="null"></div>
+        <div class="readout" style="margin-top:14px">
+          <div class="ro"><div class="k">objects</div><div class="v" id="roN">—</div></div>
+          <div class="ro"><div class="k">agreement</div><div class="v" id="roR">—</div></div>
+          <div class="ro"><div class="k">odds by luck</div><div class="v" id="roP">—</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <p><b>Careful:</b> dragging until something looks significant is how you fool
+    yourself. The counter tracks how many selections you have tried — the more
+    you try, the less a low number means.</p>
+  </div>
+
+  <footer>Prototype for CS 1710 week 9. Not part of the main site.</footer>
+</div>
+</body>
+</html>

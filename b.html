@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Prototype B — Two-sample comparison</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>" />
+  <script type="module" crossorigin src="./assets/b-9FlgqdUA.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/nulldist-BscQeuyX.js">
+  <link rel="stylesheet" crossorigin href="./assets/shared-xakpSbsL.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Prototype B</div>
+    <h1>Two-sample comparison</h1>
+    <p>Define two groups and see both answers at once. Pick which group you are editing, then drag on the scatter.</p>
+    <nav class="nav">
+      <a href="./index.html">← Both prototypes</a>
+      <a href="./a.html">A · Cross-filter</a>
+      <a href="./b.html" aria-current="page">B · Comparison</a>
+    </nav>
+  </header>
+
+  <div class="toolbar">
+    <span class="hint">Editing:</span>
+    <button class="btn tgt-a" id="tgtA" aria-pressed="true">● Group A</button>
+    <button class="btn tgt-b" id="tgtB" aria-pressed="false">● Group B</button>
+    <span class="hint" style="margin-left:14px">Presets:</span>
+    <button class="btn" data-pair="neptune">Neptune's reach: above vs below</button>
+    <button class="btn" data-pair="quality">Well-measured vs all</button>
+    <button class="btn" data-pair="distance">Nearer vs further out</button>
+    <button class="btn" id="clear">Clear both</button>
+    <span class="counter" id="counter">selections tried: 0</span>
+  </div>
+
+  <div class="card" style="margin-bottom:18px">
+    <h2>Pick two groups</h2>
+    <div class="sub">Blue box is group A, orange is group B. Switch which one you are editing above, then drag.</div>
+    <div id="scatter"></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+    <div class="card">
+      <h2 id="titleA" style="color:var(--a)">Group A</h2>
+      <div class="sub" id="subA">—</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center">
+        <div id="roseA"></div><div id="nullA"></div>
+      </div>
+      <div class="readout" style="margin-top:14px">
+        <div class="ro"><div class="k">objects</div><div class="v" id="aN">—</div></div>
+        <div class="ro"><div class="k">agreement</div><div class="v" id="aR">—</div></div>
+        <div class="ro"><div class="k">odds by luck</div><div class="v" id="aP">—</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2 id="titleB" style="color:var(--b)">Group B</h2>
+      <div class="sub" id="subB">—</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center">
+        <div id="roseB"></div><div id="nullB"></div>
+      </div>
+      <div class="readout" style="margin-top:14px">
+        <div class="ro"><div class="k">objects</div><div class="v" id="bN">—</div></div>
+        <div class="ro"><div class="k">agreement</div><div class="v" id="bR">—</div></div>
+        <div class="ro"><div class="k">odds by luck</div><div class="v" id="bP">—</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" id="verdict"><p>Pick two groups to compare them.</p></div>
+
+  <footer>Prototype for CS 1710 week 9. Not part of the main site.</footer>
+</div>
+</body>
+</html>
